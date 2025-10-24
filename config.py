@@ -18,7 +18,7 @@ class Config:
     DEBUG = os.getenv('DEBUG', False)
     TESTING = os.getenv('TESTING', False)
     SECRET_KEY = os.getenv('SECRET_KEY', 'dev-secret-key-change-in-production')
-    PORT = int(os.getenv('FLASK_PORT', 8080))
+    PORT = int(os.getenv("PORT", os.getenv("FLASK_PORT", 8080)))
     
     # Image Processing
     MAX_IMAGE_SIZE = 50 * 1024 * 1024  # 50MB
@@ -47,4 +47,5 @@ config = {
     'testing': TestingConfig,
     'default': DevelopmentConfig
 }
+
 
